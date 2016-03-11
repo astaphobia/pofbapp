@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Part Of Body App</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="partofbody_logo">part of body logo</string>
+    <string name="letsplaywithyourbrain">Lets play with your brain about your part of body</string>
+    <string name="Welcome">Hai sayang, Selamat datang di Aplikasi Part Of Body</string>
+    <string name="ayo_mulai_belajar">Ayo mulai belajar bagian bagian tubuh manusia</string>
+    <string name="about">Part Of Body merupakan aplikasi yang berguna untuk mempermudah Anak Sekolah Dasar belajar lebih dalam tenang bagian-bagian tubuh manusa secara umum.</string>
+    <string name="des_learn">learn_icon</string>
+    <string name="des_playgame">playgame_icon</string>
+    <string name="image_body">img_body</string>
+</resources>
