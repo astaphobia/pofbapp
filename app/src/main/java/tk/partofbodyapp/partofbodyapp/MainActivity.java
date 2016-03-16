@@ -77,6 +77,10 @@ public class MainActivity extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(), LearnActivity.class);
             startActivity(i);
         } else if (id == R.id.nav_playgame) {
+
+        } else if (id == R.id.nav_kamus){
+            Intent i = new Intent(getApplicationContext(), KamusActivity.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

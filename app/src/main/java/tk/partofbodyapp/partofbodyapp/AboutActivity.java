@@ -45,6 +45,10 @@ public class AboutActivity extends AppCompatActivity implements NavigationView.O
             this.finish();
         } else if (id == R.id.nav_playgame){
 
+        } else if (id == R.id.nav_kamus){
+            Intent i = new Intent(getApplicationContext(), KamusActivity.class);
+            startActivity(i);
+            this.finish();
         }
 
         drawer.closeDrawer(GravityCompat.START);

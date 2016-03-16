@@ -43,13 +43,24 @@ public class LearnActivity extends AppCompatActivity implements NavigationView.O
     //Button Level
     public void onClick(View view){
         int id = view.getId();
-        if (id == R.id.btn_lv1){
-            Intent i = new Intent(this, LearnLv1Activity.class);
-            startActivity(i);
-        } else if (id == R.id.btn_lv2){
-
-        } else if (id == R.id.btn_lv3){
-
+//        if (id == R.id.btn_lv1){
+//            Intent i = new Intent(this, LearnLv1Activity.class);
+//            startActivity(i);
+//        } else if (id == R.id.btn_lv2){
+//
+//        } else if (id == R.id.btn_lv3){
+//
+//        }
+        switch (id){
+            case R.id.btn_lv1:
+                Intent i1 = new Intent(this, LearnLv1Activity.class);
+                startActivity(i1);
+                break;
+            case R.id.btn_lv2:
+//                Intent i2 = new Intent(this, LearnLv2Activity.class);
+//                startActivity(i2);
+                break;
+            case R.id.btn_lv3:
         }
     }
 
@@ -68,6 +79,10 @@ public class LearnActivity extends AppCompatActivity implements NavigationView.O
             this.finish();
         } else if (id == R.id.nav_playgame){
 
+        } else if (id == R.id.nav_kamus){
+            Intent i = new Intent(getApplicationContext(), KamusActivity.class);
+            startActivity(i);
+            this.finish();
         }
 
         drawer.closeDrawer(GravityCompat.START);
