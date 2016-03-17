@@ -2,14 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="tk.partofbodyapp.partofbodyapp">
 
-    <uses-sdk android:targetSdkVersion="22" />
+    <uses-sdk android:targetSdkVersion="23" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -33,15 +32,14 @@
         <activity
             android:name=".LearnActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".LearnLv1Activity" />
+        <activity android:name=".LearnLv1Activity" />
         <activity
             android:name=".LearnViewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".KamusActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".KamusResultActivity"></activity>
     </application>
 
 </manifest>

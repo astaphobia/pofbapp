@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/activity_horizontal_margin"
+        android:padding="16dp"
         android:orientation="vertical"
         android:gravity="center_vertical">
 
@@ -28,5 +28,33 @@
             android:text="@string/search"
             android:layout_gravity="center_horizontal"
             android:background="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/txt_validatesearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_result"
+            android:textStyle="italic"
+            android:visibility="gone"/>
+        <LinearLayout
+            android:id="@+id/layoutKamusDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/txt_kamusResult"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/unknown"
+                android:gravity="center_vertical"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+            <ImageButton
+                android:id="@+id/btn_detailKamus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_detail"/>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
