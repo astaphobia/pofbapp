@@ -36,19 +36,21 @@ public class AboutActivity extends AppCompatActivity implements NavigationView.O
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.nav_about){
-            Intent i = new Intent(getApplicationContext(), AboutActivity.class);
-            startActivity(i);
-            this.finish();
+//            Intent i = new Intent(getApplicationContext(), AboutActivity.class);
+//            startActivity(i);
+//            this.finish();
         } else if (id == R.id.nav_learn){
             Intent i = new Intent(getApplicationContext(), LearnActivity.class);
             startActivity(i);
-            this.finish();
+//            this.finish();
         } else if (id == R.id.nav_playgame){
+            Intent i = new Intent(getApplicationContext(), GamemainActivity.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_kamus){
             Intent i = new Intent(getApplicationContext(), KamusActivity.class);
             startActivity(i);
-            this.finish();
+//            this.finish();
         }
 
         drawer.closeDrawer(GravityCompat.START);

@@ -32,14 +32,28 @@
         <activity
             android:name=".LearnActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".LearnLv1Activity" />
+        <activity
+            android:name=".LearnLv1Activity"/>
+        <activity
+            android:name=".LearnLv2Activity"/>
+        <activity
+            android:name=".LearnLv3Activity"/>
         <activity
             android:name=".LearnViewActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".KamusActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".KamusResultActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".KamusResultActivity" />
+        <activity
+            android:name=".GamemainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TutorgameActivity"
+            android:theme="@style/AppTheme.TransparentBackground"/>
+        <activity
+            android:name=".startgameActivity"/>
     </application>
 
 </manifest>

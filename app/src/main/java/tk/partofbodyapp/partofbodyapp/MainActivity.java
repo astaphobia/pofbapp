@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(), LearnActivity.class);
             startActivity(i);
         } else if (id == R.id.nav_playgame) {
-
+            Intent i = new Intent(getApplicationContext(), GamemainActivity.class);
+            startActivity(i);
         } else if (id == R.id.nav_kamus){
             Intent i = new Intent(getApplicationContext(), KamusActivity.class);
             startActivity(i);

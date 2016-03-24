@@ -24,7 +24,7 @@ import java.net.URL;
 
 
 public class LearnViewActivity extends AppCompatActivity {
-    final String TAG = LearnLv1Activity.class.getCanonicalName();
+    final String TAG = LearnViewActivity.class.getCanonicalName();
 
     public static JSONObject response;
     TextView txtV_Name, txtV_Detail;

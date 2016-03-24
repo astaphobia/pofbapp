@@ -8,16 +8,16 @@
     <string name="partofbody_logo">part of body logo</string>
     <string name="letsplaywithyourbrain">Lets play with your brain about your part of body</string>
     <string name="Welcome">AY SOBAT, SELAMAT DATANG DI APLIKASI PART OF BODY</string>
-    <string name="ayo_mulai_belajar">Ayo mulai belajar bagian bagian tubuh manusia</string>
+    <string name="ayo_mulai_belajar">Ayo mulai belajar bagian-bagian tubuh manusia</string>
     <string name="about">
         "Aplikasi part of body.\n\n"
         "Merupakan aplikasi yang berguna untuk membantu niat anak sekolah dasar dalam belajar bahasa inggris dengan mulai memperkenalkan lebih dalam tentang bagian-bagian tubuh manusia.""\n\n.Dengan adanya aplikasi ini anak sekolah dasar akan lebih mudah dalam belajar bahasa inggris.""\n\nDidalam aplikasi ini terdapat menu menu yang nantinya dapat dipilih sesuai keinginan, diantaranya menu about us, learn, play game, dan kamus."</string>
     <string name="cara_penggunaan">
-        "CARA PENGGUNAAN:.\n"
-        "-Menu about berisikan infomasi  mengenai penggunaan aplikasi ini."
-        "\n\n.-Menu learn, siswa sekolah dasar dapat belajar dan melihat detai dari penjelasan per gambar mengenai bagian-bagian tubuh manusia  dengan bahasa Indonesia dan bahasa inggris."
-        "\n\n.-1 Menu play game, ini terdapat game tebak gambar dengan 2 option menjawab yaitu speech input dan input text, serta game terdiri dari 3 level. Level 1 adalah bagian kepala, level 2 adalah bagian tubuh bawah meliputi badan dan kaki, level 3 adalah bagian tubuh dalam yang perlu diketahui oleh anak sekolah dasar."
-        "\n\n.-Menu Kamus, siswa dapat mentranslate bagian-bagian tubuh manusia yang diinginkan"
+        "CARA PENGGUNAAN:"
+        "\n-Menu about berisikan infomasi  mengenai penggunaan aplikasi ini."
+        "\n-Menu learn, siswa sekolah dasar dapat belajar dan melihat detai dari penjelasan per gambar mengenai bagian-bagian tubuh manusia  dengan bahasa Indonesia dan bahasa inggris."
+        "\n-1 Menu play game, ini terdapat game tebak gambar dengan 2 option menjawab yaitu speech input dan input text, serta game terdiri dari 3 level. Level 1 adalah bagian kepala, level 2 adalah bagian tubuh bawah meliputi badan dan kaki, level 3 adalah bagian tubuh dalam yang perlu diketahui oleh anak sekolah dasar."
+        "\n-Menu Kamus, siswa dapat mentranslate bagian-bagian tubuh manusia yang diinginkan"
     </string>
     <string name="des_learn">learn_icon</string>
     <string name="des_playgame">playgame_icon</string>
@@ -116,4 +116,57 @@
     <string name="unknown">Unknown</string>
     <string name="search">Search</string>
     <string name="no_result">Tidak ada hasil</string>
+    <string name="button_viewdetail">button view detail</string>
+    <string name="input_bagian_tubuh">Inputkan Satu Kata Bagian Tubuh</string>
+    <string name="ayo_bermain">
+        "Silakan Pilih Level untuk memulai permainan..\n\n"
+        "Tekan tombol info dibawah kanan untuk tau cara mainnya."
+    </string>
+    <string name="level1">Level 1</string>
+    <string name="level2">Level 2</string>
+    <string name="level3">Level 3</string>
+    <string name="tutor_game">
+        "<b>1</b> Perhatikan gambar dengan seksama."
+        "\n<b>2</b> Masukkan jawabanmu yang tepat pada Input Text."
+        "\n<b>3</b> Jawab dengan tepat sebelum estimasi waktu habis."
+        "\n<b>4</b> Jika jawabanmu BENAR lanjut ke gambar berikut."
+    </string>
+    <string name="jawaban">Jawaban</string>
+    <string name="checkAnswer">checkAnswer</string>
+    <string name="leher">Leher</string>
+    <string name="lengan">Lengan</string>
+    <string name="siku">Siku</string>
+    <string name="jaritangan">Jari Tangan</string>
+    <string name="kaki">Kaki</string>
+    <string name="lutut">Lutut</string>
+    <string name="otot">Otot</string>
+    <string name="bahu">Bahu</string>
+    <string name="tangan">Tangan</string>
+    <string name="punggung">Punggung</string>
+    <string name="paruparu">Paru-paru</string>
+    <string name="otak">Otak</string>
+    <string name="perut">Perut</string>
+    <string name="lidah">Lidah</string>
+    <string name="hati">Hati</string>
+    <string name="darah">Darah</string>
+    <string name="tulang">Tulang</string>
+    <string name="usus">Usus</string>
+    <string name="jantung">Jantung</string>
+    <string name="ginjal">Ginjal</string>
+
+    <array name="level1">
+        <item>Kepala</item>
+        <item>Rambut</item>
+        <item>Telinga</item>
+    </array>
+    <array name="level2">
+        <item>Tangan</item>
+        <item>Jari</item>
+        <item>Tumit</item>
+    </array>
+    <array name="level3">
+        <item>Lidah</item>
+        <item>Jantung</item>
+        <item>Hati</item>
+    </array>
 </resources>

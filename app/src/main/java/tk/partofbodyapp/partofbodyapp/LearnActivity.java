@@ -8,12 +8,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 public class LearnActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+    private static final String TAG = LearnActivity.class.getCanonicalName();
     private DrawerLayout drawer;
     private Button btn_lv1, btn_lv2, btn_lv3;
 
@@ -43,25 +45,29 @@ public class LearnActivity extends AppCompatActivity implements NavigationView.O
     //Button Level
     public void onClick(View view){
         int id = view.getId();
-//        if (id == R.id.btn_lv1){
-//            Intent i = new Intent(this, LearnLv1Activity.class);
-//            startActivity(i);
-//        } else if (id == R.id.btn_lv2){
-//
-//        } else if (id == R.id.btn_lv3){
-//
-//        }
-        switch (id){
-            case R.id.btn_lv1:
-                Intent i1 = new Intent(this, LearnLv1Activity.class);
-                startActivity(i1);
-                break;
-            case R.id.btn_lv2:
+        if (id == R.id.btn_lv1) {
+            Intent i = new Intent(this, LearnLv1Activity.class);
+            startActivity(i);
+            Log.v(TAG, "run Level 1");
+        } else if (id == R.id.btn_lv2){
+            Intent i = new Intent(this, LearnLv2Activity.class);
+            startActivity(i);
+            Log.v(TAG, "run Level 2");
+        } else if (id == R.id.btn_lv3){
+            Intent i = new Intent(this, LearnLv3Activity.class);
+            startActivity(i);
+        }
+//        switch (id){
+//            case R.id.btn_lv1:
+//                Intent i1 = new Intent(this, LearnLv1Activity.class);
+//                startActivity(i1);
+//                break;
+//            case R.id.btn_lv2:
 //                Intent i2 = new Intent(this, LearnLv2Activity.class);
 //                startActivity(i2);
-                break;
-            case R.id.btn_lv3:
-        }
+//                break;
+//            case R.id.btn_lv3:
+//        }
     }
 
     //Button Drawable
@@ -72,17 +78,19 @@ public class LearnActivity extends AppCompatActivity implements NavigationView.O
         if (id == R.id.nav_about){
             Intent i = new Intent(getApplicationContext(), AboutActivity.class);
             startActivity(i);
-            this.finish();
+//            this.finish();
         } else if (id == R.id.nav_learn){
-            Intent i = new Intent(getApplicationContext(), LearnActivity.class);
-            startActivity(i);
-            this.finish();
+//            Intent i = new Intent(getApplicationContext(), LearnActivity.class);
+//            startActivity(i);
+//            this.finish();
         } else if (id == R.id.nav_playgame){
+            Intent i = new Intent(getApplicationContext(), GamemainActivity.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_kamus){
             Intent i = new Intent(getApplicationContext(), KamusActivity.class);
             startActivity(i);
-            this.finish();
+//            this.finish();
         }
 
         drawer.closeDrawer(GravityCompat.START);

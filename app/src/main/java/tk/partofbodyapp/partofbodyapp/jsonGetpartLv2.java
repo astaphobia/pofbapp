@@ -1,8 +1,5 @@
 package tk.partofbodyapp.partofbodyapp;
 
-import android.app.Dialog;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -15,11 +12,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class jsonGetpart extends AsyncTask<String, Void, JSONObject>{
-    final String TAG = jsonGetpart.class.getCanonicalName();
+public class jsonGetpartLv2 extends AsyncTask<String, Void, JSONObject>{
+    final String TAG = jsonGetpartLv2.class.getCanonicalName();
     final String url = "http://www.yenyenofficial.tk/json/json.php?name=";
     public ConsumeResponse delegated = null;
-    String urlQuery = LearnLv1Activity.query;
+    String urlQuery = LearnLv2Activity.query;
     public static JSONObject response;
     @Override
     protected JSONObject doInBackground(String... params) {

@@ -15,19 +15,21 @@
         android:gravity="center_vertical">
 
         <SearchView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/searchInput"
-            android:background="#ffffff"
-            android:backgroundTintMode="screen"
-            android:queryHint="Cari Nama Bagian Tubuh" />
+            android:gravity="center_horizontal"
+            android:queryHint="Cari Nama Bagian Tubuh"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal" />
+
         <Button
             android:id="@+id/btnSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/search"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorPrimary"/>
+            android:background="@drawable/shape_circle"/>
         <TextView
             android:id="@+id/txt_validatesearch"
             android:layout_width="match_parent"
@@ -48,13 +50,14 @@
                 android:layout_height="match_parent"
                 android:text="@string/unknown"
                 android:gravity="center_vertical"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
-            <ImageButton
-                android:id="@+id/btn_detailKamus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_detail"/>
+            <!--<ImageButton-->
+                <!--android:id="@+id/btn_detailKamus"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_detail"-->
+                <!--android:contentDescription="@string/button_viewdetail"/>-->
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

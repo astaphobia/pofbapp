@@ -2,24 +2,24 @@ package tk.partofbodyapp.partofbodyapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.animation.Animation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.view.View;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class LearnLv1Activity extends AppCompatActivity implements ConsumeResponse{
-    final String TAG = LearnLv1Activity.class.getCanonicalName();
+public class LearnLv2Activity extends AppCompatActivity implements ConsumeResponse{
+    final String TAG = LearnLv2Activity.class.getCanonicalName();
     public static String query= "";
     private boolean isFabOpen = false;
     FloatingActionButton language, language_en, language_id;
@@ -30,7 +30,7 @@ public class LearnLv1Activity extends AppCompatActivity implements ConsumeRespon
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_learn_lv1);
+        setContentView(R.layout.activity_learn_lv2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //noinspection ConstantConditions
@@ -161,52 +161,52 @@ public class LearnLv1Activity extends AppCompatActivity implements ConsumeRespon
     public void partOnClick(View view){
         switch (view.getId()){
             case R.id.lv1_btn1:
-                query = "Kepala";
+                query = "Leher";
                 startDialog();
                 break;
             case R.id.lv1_btn2:
-                query = "Rambut";
+                query = "Lengan";
                 startDialog();
                 break;
             case R.id.lv1_btn3:
-                query = "Pipi";
+                query = "Siku";
                 startDialog();
                 break;
             case R.id.lv1_btn4:
-                query = "Dagu";
+                query = "Jari";
                 startDialog();
                 break;
             case R.id.lv1_btn5:
-                query = "Mulut";
+                query = "Kaki";
                 startDialog();
                 break;
             case R.id.lv1_btn6:
-                query = "Mata";
+                query = "Tangan";
                 startDialog();
                 break;
             case R.id.lv1_btn7:
-                query = "Jidat";
+                query = "Lutut";
                 startDialog();
                 break;
             case R.id.lv1_btn8:
-                query = "Hidung";
+                query = "Otot";
                 startDialog();
                 break;
             case R.id.lv1_btn9:
-                query = "Gigi";
+                query = "Bahu";
                 startDialog();
                 break;
             case R.id.lv1_btn10:
-                query = "Telinga";
+                query = "Punggung";
                 startDialog();
                 break;
         }
     }
 
     private void startDialog() {
-        Dialog = ProgressDialog.show(LearnLv1Activity.this, "", "Connecting..");
+        Dialog = ProgressDialog.show(LearnLv2Activity.this, "", "Connecting..");
         Dialog.setCancelable(false);
-        jsonGetpartLv1 getpart = new jsonGetpartLv1();
+        jsonGetpartLv2 getpart = new jsonGetpartLv2();
         getpart.delegated=this;
         getpart.execute();
         Log.v(TAG, "getpart execute: ");
@@ -247,7 +247,7 @@ public class LearnLv1Activity extends AppCompatActivity implements ConsumeRespon
         Dialog.dismiss();
         StringBuilder sb = new StringBuilder();
         if(response == null){
-            Toast.makeText(LearnLv1Activity.this, "response is NULL", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LearnLv2Activity.this, "response is NULL", Toast.LENGTH_SHORT).show();
         } else if (response.has("error")){
             try {
                 sb.append(response.getJSONObject("error").getString("resource"));
@@ -257,7 +257,7 @@ public class LearnLv1Activity extends AppCompatActivity implements ConsumeRespon
         }else{
             Log.v(TAG, "response: "+response);
             LearnViewActivity.response = response;
-            Intent i = new Intent(LearnLv1Activity.this, LearnViewActivity.class);
+            Intent i = new Intent(LearnLv2Activity.this, LearnViewActivity.class);
             startActivity(i);
         }
     }

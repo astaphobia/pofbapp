@@ -70,8 +70,8 @@ public class KamusActivity extends AppCompatActivity implements NavigationView.O
         txt_resultVal = (TextView) findViewById(R.id.txt_validatesearch);
         txt_kamusResult = (TextView) findViewById(R.id.txt_kamusResult);
         layoutKamusDetail = (LinearLayout) findViewById(R.id.layoutKamusDetail);
-        btn_kamusdetail = (ImageButton) findViewById(R.id.btn_detailKamus);
-        btn_kamusdetail.setOnClickListener(new kamusDetail());
+//        btn_kamusdetail = (ImageButton) findViewById(R.id.btn_detailKamus);
+//        btn_kamusdetail.setOnClickListener(new kamusDetail());
     }
 
     @Override
@@ -81,20 +81,21 @@ public class KamusActivity extends AppCompatActivity implements NavigationView.O
             case R.id.nav_about:
                 Intent iAbout = new Intent(getApplicationContext(), AboutActivity.class);
                 startActivity(iAbout);
-                this.finish();
+//                this.finish();
                 break;
             case R.id.nav_learn:
                 Intent iLearn = new Intent(getApplicationContext(), LearnActivity.class);
                 startActivity(iLearn);
-                this.finish();
+//                this.finish();
                 break;
             case R.id.nav_playgame:
-                //not yet
+                Intent iPlaygamem = new Intent(getApplicationContext(), GamemainActivity.class);
+                startActivity(iPlaygamem);
                 break;
             case R.id.nav_kamus:
-                Intent iKamus = new Intent(getApplicationContext(), KamusActivity.class);
-                startActivity(iKamus);
-                this.finish();
+//                Intent iKamus = new Intent(getApplicationContext(), KamusActivity.class);
+//                startActivity(iKamus);
+//                this.finish();
                 break;
         }
 
@@ -200,7 +201,7 @@ public class KamusActivity extends AppCompatActivity implements NavigationView.O
                 try {
                     String name_indo = response.getString("name_indo");
                     String name_eng = response.getString("name_eng");
-                    txt_kamusResult.setText(name_indo+"/"+name_eng);
+                    txt_kamusResult.setText(name_indo + "/" + name_eng);
                     layoutKamusDetail.setVisibility(View.VISIBLE);
                     txt_resultVal.setVisibility(View.GONE);
 
