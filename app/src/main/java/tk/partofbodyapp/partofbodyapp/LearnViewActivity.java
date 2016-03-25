@@ -4,13 +4,17 @@ import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,9 +22,12 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.net.URLConnection;
 
 
 public class LearnViewActivity extends AppCompatActivity {
@@ -33,6 +40,11 @@ public class LearnViewActivity extends AppCompatActivity {
     private Bitmap bitmap;
     String lang = LearnLv1Activity.lang;
     CollapsingToolbarLayout collapsingToolbarLayout;
+
+    FloatingActionButton fbtn_playsound;
+    private String soundQuery;
+    private File mediaFile;
+    private MediaPlayer mPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +61,27 @@ public class LearnViewActivity extends AppCompatActivity {
         txtV_Detail = (TextView) findViewById(R.id.txt_resultDetail);
         imgV_Result = (ImageView) findViewById(R.id.img_result);
         showResult();
+        fbtn_playsound = (FloatingActionButton) findViewById(R.id.fbtn_playsound);
+        fbtn_playsound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                plaSound();
+            }
+        });
+    }
+
+    private void plaSound() {
+        String urlSound = "http://www.yenyenofficial.tk/sounds/"+soundQuery.toLowerCase().replace(" ", "-")+".m4a";
+        Log.v(TAG, urlSound);
+        mPlayer = new MediaPlayer();
+        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        try {
+            mPlayer.setDataSource(urlSound);
+            mPlayer.prepare();
+            mPlayer.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void showResult() {
@@ -87,6 +120,9 @@ public class LearnViewActivity extends AppCompatActivity {
                 txtV_Name.setText(nameAll);
                 collapsingToolbarLayout.setTitle(name_indo);
                 txtV_Detail.setText(detailAll);
+
+                //soundQuery
+                soundQuery = name_indo;
 
                 //setimage
                 new setImg().execute("http://www.yenyenofficial.tk" + image_url);
