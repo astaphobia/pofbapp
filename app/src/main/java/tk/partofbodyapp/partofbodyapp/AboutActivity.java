@@ -1,18 +1,28 @@
 package tk.partofbodyapp.partofbodyapp;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import java.io.IOException;
 
 public class AboutActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    private FloatingActionButton fbtn_playsound;
+    private MediaPlayer mPlayer;
+    private final static  String TAG = AboutActivity.class.getCanonicalName();
 
     @Override
     protected void onCreate(Bundle savedInstancestate){
@@ -29,6 +39,29 @@ public class AboutActivity extends AppCompatActivity implements NavigationView.O
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //sound
+        fbtn_playsound = (FloatingActionButton) findViewById(R.id.fbtn_playsound);
+        fbtn_playsound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playSound();
+            }
+        });
+    }
+
+    private void playSound() {
+        String urlSound = "http://www.yenyenofficial.tk/sounds/about.m4a";
+        Log.v(TAG, urlSound);
+        mPlayer = new MediaPlayer();
+        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        try {
+            mPlayer.setDataSource(urlSound);
+            mPlayer.prepare();
+            mPlayer.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
