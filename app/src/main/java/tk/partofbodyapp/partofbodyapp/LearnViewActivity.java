@@ -1,5 +1,6 @@
 package tk.partofbodyapp.partofbodyapp;
 
+import android.app.MediaRouteButton;
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -41,10 +42,11 @@ public class LearnViewActivity extends AppCompatActivity {
     String lang = LearnLv1Activity.lang;
     CollapsingToolbarLayout collapsingToolbarLayout;
 
-    FloatingActionButton fbtn_playsound;
+    private FloatingActionButton fbtn_playsound;
     private String soundQuery;
-    private File mediaFile;
     private MediaPlayer mPlayer;
+    private ProgressDialog progressDialog;
+    private FloatingActionButton fbtn_stopsound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,27 +64,11 @@ public class LearnViewActivity extends AppCompatActivity {
         imgV_Result = (ImageView) findViewById(R.id.img_result);
         showResult();
         fbtn_playsound = (FloatingActionButton) findViewById(R.id.fbtn_playsound);
-        fbtn_playsound.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                plaSound();
-            }
-        });
+        fbtn_playsound.setOnClickListener(new playSound());
+        fbtn_stopsound = (FloatingActionButton) findViewById(R.id.fbtn_stopsound);
+        fbtn_stopsound.setOnClickListener(new stopSound());
     }
 
-    private void plaSound() {
-        String urlSound = "http://www.yenyenofficial.tk/sounds/"+soundQuery.toLowerCase().replace(" ", "-")+".m4a";
-        Log.v(TAG, urlSound);
-        mPlayer = new MediaPlayer();
-        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        try {
-            mPlayer.setDataSource(urlSound);
-            mPlayer.prepare();
-            mPlayer.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     private void showResult() {
         try {
@@ -165,6 +151,56 @@ public class LearnViewActivity extends AppCompatActivity {
                 Dialog.dismiss();
                 Toast.makeText(getApplicationContext(), "Ada Kesalahan, Coba Lagi", Toast.LENGTH_SHORT).show();
             }
+        }
+    }
+
+    private class playSound implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            progressDialog = new ProgressDialog(LearnViewActivity.this);
+            progressDialog.setMessage("Buffered");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+            String urlSound = "http://www.yenyenofficial.tk/sounds/"+soundQuery.toLowerCase().replace(" ", "-")+".m4a";
+            Log.v(TAG, urlSound);
+            mPlayer = new MediaPlayer();
+            mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            try {
+                mPlayer.setDataSource(urlSound);
+                mPlayer.prepare();
+                mPlayer.start();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            mPlayer.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+                @Override
+                public boolean onError(MediaPlayer mp, int what, int extra) {
+                    Toast.makeText(getApplicationContext(), "Kesalahan Jaringan", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                    return false;
+                }
+            });
+            mPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mp) {
+                    progressDialog.dismiss();
+                    mPlayer.start();
+                    fbtn_playsound.setVisibility(View.GONE);
+                    fbtn_stopsound.setVisibility(View.VISIBLE);
+
+                }
+            });
+
+
+        }
+    }
+
+    private class stopSound implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            mPlayer.stop();
+            fbtn_stopsound.setVisibility(View.GONE);
+            fbtn_playsound.setVisibility(View.VISIBLE);
         }
     }
 }
