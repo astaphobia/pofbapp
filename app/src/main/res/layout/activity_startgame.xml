@@ -32,12 +32,21 @@
             android:background="@color/colorPrimary"
             android:src="@drawable/ic_menu_gallery"
             android:contentDescription="image result"/>
+        <!--<TextView-->
+            <!--android:id="@+id/tv_resultEng"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/unknown"-->
+            <!--android:textSize="20sp"-->
+            <!--android:background="@color/colorPrimary"-->
+            <!--android:textStyle="bold"-->
+            <!--android:padding="@dimen/text_margin"/>-->
         <TextView
             android:id="@+id/txt_resultName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/jawaban"
-            android:gravity="center"
+            android:gravity="left"
             android:layout_margin="@dimen/text_margin"
             android:textSize="20sp"/>
         <EditText

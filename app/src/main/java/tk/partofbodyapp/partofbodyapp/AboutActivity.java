@@ -1,5 +1,6 @@
 package tk.partofbodyapp.partofbodyapp;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -12,9 +13,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -23,6 +24,10 @@ public class AboutActivity extends AppCompatActivity implements NavigationView.O
     private FloatingActionButton fbtn_playsound;
     private MediaPlayer mPlayer;
     private final static  String TAG = AboutActivity.class.getCanonicalName();
+    private ProgressDialog progressDialog;
+    String isPlaying = "true";
+    private FloatingActionButton fbtn_stopsound;
+//    private TextView tv_buffer;
 
     @Override
     protected void onCreate(Bundle savedInstancestate){
@@ -39,30 +44,14 @@ public class AboutActivity extends AppCompatActivity implements NavigationView.O
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        //sound
+        //play sound
         fbtn_playsound = (FloatingActionButton) findViewById(R.id.fbtn_playsound);
-        fbtn_playsound.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playSound();
-            }
-        });
+        fbtn_playsound.setOnClickListener(new playSound());
+        //stop sound
+        fbtn_stopsound = (FloatingActionButton) findViewById(R.id.fbtn_stopsound);
+        fbtn_stopsound.setOnClickListener(new stopSound());
     }
 
-    private void playSound() {
-        String urlSound = "http://www.yenyenofficial.tk/sounds/about.m4a";
-        Log.v(TAG, urlSound);
-        mPlayer = new MediaPlayer();
-        mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-        try {
-            mPlayer.setDataSource(urlSound);
-            mPlayer.prepare();
-            mPlayer.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -75,14 +64,17 @@ public class AboutActivity extends AppCompatActivity implements NavigationView.O
         } else if (id == R.id.nav_learn){
             Intent i = new Intent(getApplicationContext(), LearnActivity.class);
             startActivity(i);
+            mPlayer.stop();
 //            this.finish();
         } else if (id == R.id.nav_playgame){
             Intent i = new Intent(getApplicationContext(), GamemainActivity.class);
             startActivity(i);
+            mPlayer.stop();
 
         } else if (id == R.id.nav_kamus){
             Intent i = new Intent(getApplicationContext(), KamusActivity.class);
             startActivity(i);
+            mPlayer.stop();
 //            this.finish();
         }
 
@@ -95,7 +87,57 @@ public class AboutActivity extends AppCompatActivity implements NavigationView.O
         if(drawer.isDrawerOpen(GravityCompat.START)){
             drawer.closeDrawer(GravityCompat.START);
         }else {
+            mPlayer.stop();
             super.onBackPressed();
+        }
+    }
+
+    private class playSound implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+//            Log.v(TAG, String.valueOf(mPlayer.isPlaying()));
+            progressDialog = new ProgressDialog(AboutActivity.this);
+            progressDialog.setMessage("Buffered");
+            progressDialog.setCancelable(false);
+            progressDialog.show();
+            mPlayer = new MediaPlayer();
+            String urlSound = "http://www.yenyenofficial.tk/sounds/about.m4a";
+            mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            try {
+                mPlayer.setDataSource(urlSound);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            mPlayer.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+                @Override
+                public boolean onError(MediaPlayer mp, int what, int extra) {
+                    Toast.makeText(getApplicationContext(), "Kesalahan Jaringan", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                    return false;
+                }
+            });
+            mPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mp) {
+                    progressDialog.dismiss();
+                    mPlayer.start();
+                    fbtn_playsound.setVisibility(View.GONE);
+                    fbtn_stopsound.setVisibility(View.VISIBLE);
+
+                }
+            });
+            mPlayer.prepareAsync();
+
+        }
+    }
+
+    private class stopSound implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            mPlayer.stop();
+            fbtn_stopsound.setVisibility(View.GONE);
+            fbtn_playsound.setVisibility(View.VISIBLE);
         }
     }
 

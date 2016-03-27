@@ -13,11 +13,11 @@
         "Aplikasi part of body.\n\n"
         "Merupakan aplikasi yang berguna untuk membantu niat anak sekolah dasar dalam belajar bahasa inggris dengan mulai memperkenalkan lebih dalam tentang bagian-bagian tubuh manusia.""\n\n.Dengan adanya aplikasi ini anak sekolah dasar akan lebih mudah dalam belajar bahasa inggris.""\n\nDidalam aplikasi ini terdapat menu menu yang nantinya dapat dipilih sesuai keinginan, diantaranya menu about us, learn, play game, dan kamus."</string>
     <string name="cara_penggunaan">
-        "CARA PENGGUNAAN:"
-        "\n-Menu about berisikan infomasi  mengenai penggunaan aplikasi ini."
-        "\n-Menu learn, siswa sekolah dasar dapat belajar dan melihat detai dari penjelasan per gambar mengenai bagian-bagian tubuh manusia  dengan bahasa Indonesia dan bahasa inggris."
-        "\n-1 Menu play game, ini terdapat game tebak gambar dengan 2 option menjawab yaitu speech input dan input text, serta game terdiri dari 3 level. Level 1 adalah bagian kepala, level 2 adalah bagian tubuh bawah meliputi badan dan kaki, level 3 adalah bagian tubuh dalam yang perlu diketahui oleh anak sekolah dasar."
-        "\n-Menu Kamus, siswa dapat mentranslate bagian-bagian tubuh manusia yang diinginkan"
+        "<b>CARA PENGGUNAAN:</b>"
+        "\n\n-Menu about berisikan infomasi  mengenai penggunaan aplikasi ini."
+        "\n\n-Menu learn, siswa sekolah dasar dapat belajar dan melihat detai dari penjelasan per gambar mengenai bagian-bagian tubuh manusia  dengan bahasa Indonesia dan bahasa inggris."
+        "\n\n-1 Menu play game, ini terdapat game tebak gambar dengan 2 option menjawab yaitu speech input dan input text, serta game terdiri dari 3 level. Level 1 adalah bagian kepala, level 2 adalah bagian tubuh bawah meliputi badan dan kaki, level 3 adalah bagian tubuh dalam yang perlu diketahui oleh anak sekolah dasar."
+        "\n\n-Menu Kamus, siswa dapat mentranslate bagian-bagian tubuh manusia yang diinginkan"
     </string>
     <string name="des_learn">learn_icon</string>
     <string name="des_playgame">playgame_icon</string>
@@ -131,7 +131,7 @@
         "\n<b>3</b> Jawab dengan tepat sebelum estimasi waktu habis."
         "\n<b>4</b> Jika jawabanmu BENAR lanjut ke gambar berikut."
     </string>
-    <string name="jawaban">Jawaban</string>
+    <string name="jawaban">Jawaban Bahasa Indo</string>
     <string name="checkAnswer">checkAnswer</string>
     <string name="leher">Leher</string>
     <string name="lengan">Lengan</string>

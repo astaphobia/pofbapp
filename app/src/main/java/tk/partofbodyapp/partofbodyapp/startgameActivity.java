@@ -273,6 +273,7 @@ public class startgameActivity extends AppCompatActivity implements View.OnClick
             super.onPostExecute(bitmap);
             if(bitmap != null){
                 imgV_Result.setImageBitmap(bitmap);
+//                tv_resultEng.setText(listarray.get(index));
                 Dialog.dismiss();
                 startTime();
             }else{
