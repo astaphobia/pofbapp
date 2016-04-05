@@ -110,6 +110,7 @@ public class startgameActivity extends AppCompatActivity implements View.OnClick
                 alertDialog.show();
             }
         }
+        input_jawaban.setText("");
     }
 
     private class startJson extends AsyncTask<String, String, JSONObject>{

@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Selemat Datang"
+        android:text="@string/selamatdatang"
         android:textColor="#333"
         android:shadowDx="1"
         android:shadowDy="1"
@@ -31,7 +31,7 @@
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="2"
-        android:text="Nimkati mudahnya belajar bagian bagian tubuh"
+        android:text="@string/nikmatimudahnya"
         android:layout_gravity="center"
         android:gravity="center|top"
         android:textSize="25dp" />

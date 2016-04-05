@@ -153,6 +153,8 @@
     <string name="usus">Usus</string>
     <string name="jantung">Jantung</string>
     <string name="ginjal">Ginjal</string>
+    <string name="selamatdatang">Selemat Datang</string>
+    <string name="nikmatimudahnya">Nikmati mudahnya belajar bagian bagian tubuh</string>
 
     <array name="level1">
         <item>Kepala</item>
